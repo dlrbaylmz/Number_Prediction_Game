@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     
     let maxdeneme : Int = 5
     var denemesayisi : Int = -1
+    //tahmin edilmesi gereken sayı
     var hedefsayi : Int = -1
     var oyunbasarili : Bool = false
     
@@ -46,6 +47,17 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnkaydet(_ sender: UIButton) {
+        kullanicimg.isHidden = false
+        if let t = Int(kullanicisayi.text!){
+            hedefsayi = t
+            tahminkaydet.isEnabled = true
+            kullanicisayi.isEnabled = false
+            kullanicikaydet.isEnabled = false
+            kullanicimg.image = UIImage(named: "onay")
+        }
+        else {
+            kullanicimg.image = UIImage(named: "hata")
+        }
     }
     
     
