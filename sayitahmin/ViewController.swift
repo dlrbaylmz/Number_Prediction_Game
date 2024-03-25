@@ -84,6 +84,13 @@ class ViewController: UIViewController {
                 tahminsayi.textColor = UIColor.green
                 kullanicisayi.isSecureTextEntry = false
                 oyunbasarili = true
+                
+                let alertController = UIAlertController(title: "BAŞARILI", message: "Sayıyı Doğru Tahmin Ettin. Tebrikler!!", preferredStyle: UIAlertController.Style.alert)
+                
+                let okAction = UIAlertAction(title: "Tamam", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(okAction)
+                present(alertController, animated: true, completion: nil)
+                
                 return
             }
         }
@@ -97,9 +104,14 @@ class ViewController: UIViewController {
             
             tahminkaydet.isEnabled = false
             tahminimg.image = UIImage(named: "hata")
-            lblsonuc.text = "OYUN BAŞARISIZ \nKullanıcı \(hedefsayi) Sayısını Girdi"
+            lblsonuc.text = "YANLIŞ TAHMİN!!"
             kullanicisayi.isSecureTextEntry = false
+            let alertController = UIAlertController(title: "ÜZGÜNÜM", message: "Tahmin hakkın bitti. Tahmin etmen gereken sayı: \(hedefsayi)", preferredStyle: UIAlertController.Style.alert)
             
+            let okAction = UIAlertAction(title: "Tamam", style: UIAlertAction.Style.default, handler: nil)
+            
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
             return
         }
         
