@@ -22,14 +22,27 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var lblsonuc: UILabel!
     
+    var yildizlar : [UIImageView] = [UIImageView]()
     
-    
-    
+    let maxdeneme : Int = 5
+    var denemesayisi : Int = -1
+    var hedefsayi : Int = -1
+    var oyunbasarili : Bool = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
          
+        yildizlar = [yildiz1,yildiz2,yildiz3,yildiz4,yildiz5]
+        kullanicimg.isHidden = true  //resimleri ilk açılışta gizleme
+        tahminimg.isHidden = true
+        tahminkaydet.isEnabled = false // kaydet butonu çalışmasın
+        kullanicisayi.isSecureTextEntry = true // sayıyı gizledi
+        lblsonuc.text = ""
+        
+        
+        
+        
     }
 
     @IBAction func btnkaydet(_ sender: UIButton) {
@@ -37,6 +50,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func btndene(_ sender: UIButton) {
+        
     }
     
     
